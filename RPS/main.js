@@ -1,17 +1,13 @@
-/*
-
-1.
-
-Dodaj wybory graczy w aiHand (tekstowo)
-*/
-
+//////// To do: /////////
+/* Add joice counter*/ 
 
 
 const startBtn = document.querySelector('.startBtn')
 const gameResults = document.querySelector('.result span')
 const wins = document.querySelector('.wins span')
 const loss = document.querySelector('.losess span')
-const playersJoice = document.querySelector('aiHand')
+const textArea = document.querySelector('.joicesText')
+
 
 
 const joiceArr = ['rock', 'paper', 'scissors']
@@ -46,7 +42,7 @@ const startGame = () => {
         console.log('wybierz reke')
     }
 }
-const aiJoice = () => { // game.joice = aiJoice =()=>{}??
+const aiJoice = () => {
     let joiceNumb = Math.floor((Math.random() * joiceArr.length))
     game.aiJoice = joiceArr[joiceNumb]
     console.log(`Wybór gry ${game.aiJoice}`)
@@ -66,8 +62,12 @@ const checkResults = () => {
         playerWin++
     }
 
+
     console.log(playerWin)
     console.log(aiWin)
+
+    textArea.textContent = `You'r joice is ${game.playerHand}, you'r openent joice is ${game.aiJoice}.`
+
 }
 const result = () => {
     if (playerWin === 3) {
@@ -91,3 +91,4 @@ lossWinCounter = () => {
     console.log(winCounter)
     console.log(lossCounter)
 }
+
